@@ -1,261 +1,209 @@
 <!DOCTYPE html>
+<html lang="ko">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yeom hyera</title>
-    <style>
-        * {
-            margin: 0; padding: 0;
-            font-family:'Malgun Gothic', sans-serif;
-        }
-        a {text-decoration: none;}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yeom Hyera</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
 
-        li{list-style: none;}
-    </style>
-    <style>
-        .pull-left{float: left;}
-        .pull-right{float:right;}
-    </style>
-    <style>
-        body{
-            width: 1080px; margin: 0 auto;
-            background: #f09e9e;
+    body {
+      background: #f6f8fa;
+      color: #2c3e50;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
 
-        }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-        #page-wrapper{
-            background: white;
-            margin: 40px 0; padding: 10px 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
-        }
-    </style>     
-    <style>
-        #main-header{
-            padding: 40px 50px;
-        }
-        .master-title{
-            font-family:Times;
-            font-size: 30px;
-            color:#181818;
-        }
-        .master-description{
-            font-size: 15px; font-weight: 500;
-            color:#383838;
-        }
-    </style>
-    <style>
-        #main-navigation{
-            border-top: 1px solid #ffe8e8;
-            border-bottom: 1px solid #ffe8e8;
-            margin-bottom: 1px;
-            height: 40px;
+    li {
+      list-style: none;
+    }
 
-            /*그레이디언트 속성 사용*/
-            background: #fcecfc;
-            background: -moz-linear-gradient(top,  #fcecfc 0%, #fba6e1 82%, #fd89d7 94%, #ff7cd8 100%); /* FF3.6-15 */
-            background: -webkit-linear-gradient(top,  #fcecfc 0%,#fba6e1 82%,#fd89d7 94%,#ff7cd8 100%); /* Chrome10-25,Safari5.1-6 */
-            background: linear-gradient(to bottom,  #fcecfc 0%,#fba6e1 82%,#fd89d7 94%,#ff7cd8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcecfc', endColorstr='#ff7cd8',GradientType=0 ); /* IE6-9 */
-        }
-        .outer-menu-item{
-            float:left;
-            position: relative;
-        }
-        .outer-menu-item:hover{
-            background: black;
-            color: rgb(243, 136, 136);
-        }
-        .menu-title{
-            display: block;
-            height: 30px; line-height: 30px;
-            text-align: center;
-            padding: 5px 20px;
-        }
-        .inner-menu{
-            display:none;
-            position: absolute;
-            top: 40px; left: 0;
-            width: 100%;
-            background: white;
-            box-shadow: 0 2px 6px rgba(196, 124, 124, 0.9);
-            z-index: 1000;
-            text-align: center;
-        }
-        .inner-menu-item > a{
-            display: block;
-            padding: 5px 10px;
-            color: black;
-        }
-        .inner-menu-item > a:hover{
-            background: rgb(124, 100, 100);
-            color: rgb(133, 83, 83);
-        }
-    </style>
-    <style>
-        #content{overflow: hidden;}
+    #page-wrapper {
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
 
-        #main-section{
-            float: left;
-            width: 710px;
-        }
-        #main-aside{
-            border-style: dashed;  /*6장 : 박스 속성*/
-            border-radius: 20px;
-            float: right;
-            width: 200px;
-        }
-    </style>
-    <style>
-        article{
-            padding: 0 10px 20px 10px;
-            border-bottom: 1px solid #C8C8C8;
-        }
+    #main-header {
+      text-align: center;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      padding: 40px 20px;
+      color: #ffffff;
+    }
 
-        .article-header{padding: 20px 0;}
+    .master-title {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
 
-        .article-title{
-            font-size: 25px;
-            font-weight: 500;
-        }
+    .master-description {
+      font-size: 18px;
+      font-weight: 400;
+    }
 
-        .article-data{font-size: 13px;}
-        .article-body{font-size: 14px;}
-    </style>
-    <style>
-        .aside-list{padding: 10px 0 30px 0;}
-        .aside-list > h3{
-            font-size: 15px;
-            font-weight: 600;
-        }
-        .aside-list li a{
-            margin-left: 8px;
-        }
+    #main-navigation {
+      display: flex;
+      justify-content: center;
+      background: #fdfdfd;
+      border-bottom: 1px solid #eee;
+      padding: 10px 0;
+    }
 
-        .aside-list li a{
-            margin-left: 8px;
-            font-size: 13px;
-            color: #6C6C6C;
-        }
-    </style>
+    .menu-title {
+      padding: 10px 20px;
+      font-weight: 500;
+      color: #555;
+      transition: all 0.3s;
+      border-radius: 25px;
+    }
 
-    <!--내가 추가한 스타일시트-->
-    <style>
-        .article-date{
-            float:right;
-        }
-        .sss{
-            background-image: url('jin.jpg');
-        }
-    </style>
+    .menu-title:hover {
+      background: #fad0c4;
+      color: #ffffff;
+    }
 
+    #content {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    #main-section {
+      flex: 3;
+    }
+
+    #main-aside {
+      flex: 1;
+      background: #f9f9f9;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    article {
+      background: #ffffff;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .article-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #2c3e50;
+    }
+
+    .article-date {
+      font-size: 14px;
+      color: #95a5a6;
+      margin-bottom: 12px;
+    }
+
+    .article-body {
+      font-size: 16px;
+      color: #34495e;
+    }
+
+    .aside-list h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+
+    .aside-list li {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 8px;
+    }
+
+    .aside-list li:before {
+      content: "• ";
+      color: #ff9a9e;
+    }
+
+    @media (max-width: 768px) {
+      #content {
+        flex-direction: column;
+      }
+
+      #main-aside {
+        margin-top: 20px;
+      }
+    }
+  </style>
 </head>
-<body>
-    <div id="page-wrapper">
-        <header id="main-header">
-            <img src="luv.jpg"/>
-            <hgroup>
-                <h1 class="master-title"><i>어서와요 혜라의 숲</i></h1>
-                <h2 class="master-description">Hera's Daily Record</h2>
-            </hgroup>
-        </header>
-        <nav id="main-navigation">
-            <div class="pull-left">
 
-                <li class="outer-menu-item">
-                    <span class="menu-title">일상일기</span>
-                    <ul class="inner-menu">
-                        <li class="inner-menu-item"><a href="#">데이터</a></li>
-                    </ul>
-                </li>
-                <li class="outer-menu-item">
-                    <span class="menu-title">방탄일기</span>
-                    <ul class="inner-menu">
-                        <li class="inner-menu-item"><a href="#">데이터</a></li>
-                    </ul>
-                </li>
-                <li class="outer-menu-item">
-                    <span class="menu-title">애니일기</span>
-                    <ul class="inner-menu">
-                        <li class="inner-menu-item"><a href="#">데이터</a></li>
-                    </ul>
-                </li>
-                <li class="outer-menu-item">
-                    <span class="menu-title">포트폴리오</span>
-                    <ul class="inner-menu">
-                        <li class="inner-menu-item"><a href="#">데이터</a></li>
-                    </ul>
-                </li>
-                <li class="outer-menu-item">
-                    <span class="menu-title">캘린더</span>
-                    <ul class="inner-menu">
-                        <li class="inner-menu-item"><a href="#">데이터</a></li>
-                    </ul>
-                </li>
-                <li class="outer-menu-item">
-                    <span class="menu-title">가계부</span>
-                    <ul class="inner-menu">
-                        <li class="inner-menu-item"><a href="#">데이터</a></li>
-                    </ul>
-                </li>
-                </ul>
-            </div>
-        </nav>
-        <div id="content">
-            <section id="main-section">
-                <article>
-                    <div class="article-header">
-                        <h1 class="article-title">일상일기</h1>
-                    </div>
-                    <div class='sss'><p>1</p></div>
-                    <div class="article-body">
-                        <p>나는 오늘 다이어리에 꾸밀 스티커를 샀다.</p>
-                        <p>근데 생각보다 양이 많아서 당황스러웠다.</p>
-                        <p class="article-date">2021년 12월 1일</p>
-                    </div>
-                </article>
-                <article>
-                    <div class="article-header">
-                        <h1 class="article-title">덕질 일기</h1>
-                    </div>
-                    <div class="article-body">
-                        <p>오늘 석진이가 셀카를 올려줬다. 아침부터 최애가 올려준 사진을 보면서 하루를 시작하는 건 정말 행복하다.</p>
-                        <p>하지만 그래봤자 미국에서 밖에 활동을 하지 않는다. 속상하다... 코로나가 종식되면 돌아올까?</p>
-                        <p>코로나가 끝날 때쯤에는 군대에 가겠지...</p>
-                        <br>
-                        <p>안녕하세요 교수님. 이 부분이 잘 보일지 알 수는 없지만 혹시 보신다면 1학기 동안 웹표준기술 수업을 가르쳐 주셔서 정말 감사합니다.</p>
-                        <p>아직은 부족하지만 교수님께서 배운 수업 덕에 웹 프로그래밍에 대한 기본적인 개념을 알 수 있었습니다</p>
-                        <p class="article-date">2021년 12월 7일</p>   
-                    </div>
-                </article>
-            </section>
-        <aside id="main-aside">
-            <div class="aside-list">
-                <h3>오늘 할 일</h3>
-                <ul>
-                    <li>&nbsp 1. 방 치우기</li>
-                    <li>&nbsp 2. 자바 2강 듣기</li>
-                    <li>&nbsp 3. 기숙사 신청(~25일)</li>
-                    <li>&nbsp 4. 2학기 포트폴리오 정리</li>
-                    <li>&nbsp 5. 장보기</li>
-                </ul>
-            </div>
-            <div class="aside-list">
-                <h3>데일리 필수</h3>
-                <ul>
-                    <li>&nbsp 기상 후 스트레칭</li>
-                    <li>&nbsp 이부자리 정리</li>
-                    <li>&nbsp 허리 교정 밴드 착용</li>
-                    <li>&nbsp 백준 5문제 풀기</li>
-                    <li>&nbsp 일기 작성</li>
-                </ul>
-            </div>
-        </aside>
+<body>
+  <div id="page-wrapper">
+    <header id="main-header">
+      <h1 class="master-title">어서와요 혜라의 숲</h1>
+      <h2 class="master-description">Hera's Daily Record</h2>
+    </header>
+    <nav id="main-navigation">
+      <li><a class="menu-title" href="#">일상일기</a></li>
+      <li><a class="menu-title" href="#">덕질일기</a></li>
+      <li><a class="menu-title" href="#">애니일기</a></li>
+      <li><a class="menu-title" href="#">포트폴리오</a></li>
+      <li><a class="menu-title" href="#">캘린더</a></li>
+      <li><a class="menu-title" href="#">가계부</a></li>
+    </nav>
+    <div id="content">
+      <section id="main-section">
+        <article>
+          <h1 class="article-title">일상일기</h1>
+          <p class="article-date">2021년 12월 1일</p>
+          <p class="article-body">나는 오늘 다이어리에 꾸밀 스티커를 샀다.<br>근데 생각보다 양이 많아서 당황스러웠다.</p>
+        </article>
+        <article>
+          <h1 class="article-title">덕질 일기</h1>
+          <p class="article-date">2021년 12월 7일</p>
+          <p class="article-body">오늘 석진이가 셀카를 올려줬다...</p>
+        </article>
+      </section>
+      <aside id="main-aside">
+        <div class="aside-list">
+          <h3>오늘 할 일</h3>
+          <ul>
+            <li>방 치우기</li>
+            <li>자바 2강 듣기</li>
+            <li>기숙사 신청(~25일)</li>
+            <li>2학기 포트폴리오 정리</li>
+            <li>장보기</li>
+          </ul>
         </div>
-        <footer id="main-footer">
-            <a href=“#”><b>Created by 컴퓨터공학과, 2학년, 오전반, 20200850, 염혜라</b></a>        
-        </footer>
+        <div class="aside-list">
+          <h3>데일리 필수</h3>
+          <ul>
+            <li>기상 후 스트레칭</li>
+            <li>이부자리 정리</li>
+            <li>허리 교정 밴드 착용</li>
+            <li>백준 1문제 풀기</li>
+            <li>일기 작성</li>
+          </ul>
+        </div>
+      </aside>
     </div>
+  </div>
 </body>
+
 </html>
